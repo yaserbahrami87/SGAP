@@ -19,4 +19,22 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/home', 'HomeController@index');
+Route::get('/panel', 'AdminController@index');
+
+
+Route::middleware(['can:isAdmin'])->prefix('admin')->group(function()
+{
+    Route::get('/','AdminController@index');
+    //Users
+    Route::get('/user/all','UserController@allUsers');
+    Route::resource('user','UserController');
+//    Route::prefix('user')->group(function()
+//    {
+//        Route::get('all','UserController@allUsers');
+//        Route::get('create','UserController@create');
+//        Route::resource('user','UserController');
+//    });
+
+});
