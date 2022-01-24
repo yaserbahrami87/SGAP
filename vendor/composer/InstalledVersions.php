@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '30a91467bd1c7900831eeacd3d40b5dccf79c761',
+    'reference' => '9b5f0124bd4613656146bd1ed45fc068f208e066',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -219,6 +219,24 @@ private static $installed = array (
       array (
       ),
       'reference' => '8c3d0a3f6af734494ad8f6fbbee0ba92422859f3',
+    ),
+    'hekmatinasser/notowo' => 
+    array (
+      'pretty_version' => 'v1.0.1',
+      'version' => '1.0.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'c51ad5dcedac966dd93ce558ac7e6a84e0020d6d',
+    ),
+    'hekmatinasser/verta' => 
+    array (
+      'pretty_version' => 'v1.12.4',
+      'version' => '1.12.4.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '75a9713ed2f5723b34318744614cd8b55cfb09f2',
     ),
     'illuminate/auth' => 
     array (
@@ -446,7 +464,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '30a91467bd1c7900831eeacd3d40b5dccf79c761',
+      'reference' => '9b5f0124bd4613656146bd1ed45fc068f208e066',
     ),
     'laravel/tinker' => 
     array (
@@ -818,6 +836,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'fc9bb7fb5388691fd7373cd44dcb4d63bbcf24df',
+    ),
+    'realrashid/sweet-alert' => 
+    array (
+      'pretty_version' => 'v4.1.0',
+      'version' => '4.1.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '7615c5799fbc8743a6b5a7bd7f645f55a1d62723',
     ),
     'rhumsaa/uuid' => 
     array (

@@ -1,28 +1,7 @@
 @extends('master.index')
 
-@section('headerScript')
-    <style>
-        body,html {
-            background-image: url({{asset('/images/background.jpg')}});
-            height: 100%;
-        }
-
-        #profile-img {
-            height:180px;
-        }
-        .h-80 {
-            height: 80% !important;
-        }
-    </style>
-@endsection
-
 @section('content')
-    <div class="container h-80 pt-5">
-        <div class="row align-items-center h-100">
-            <div class="col-5 mx-auto">
-                <div class="text-center">
-                    <img id="profile-img" class="rounded-circle profile-img-card" src="{{asset('/images/login.png')}}" />
-                    <p id="profile-name" class="profile-name-card"></p>
+
                     <form method="POST" action="{{ route('login') }}">
                         {{csrf_field()}}
 
@@ -68,9 +47,5 @@
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
-        </div>
-    </div>
 
 @endsection

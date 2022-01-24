@@ -175,6 +175,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Anetwork\Validation\PersianValidationServiceProvider::class,
+        RealRashid\SweetAlert\SweetAlertServiceProvider::class,
+        Hekmatinasser\Verta\Laravel\VertaServiceProvider::class,
+
 
     ],
 
@@ -227,6 +230,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
+        'Verta' => Hekmatinasser\Verta\Verta::class,
 
     ],
 

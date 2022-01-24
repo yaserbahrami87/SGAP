@@ -24,6 +24,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/panel', 'AdminController@index');
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 
 Route::middleware(['can:isAdmin'])->prefix('admin')->group(function()
@@ -31,7 +32,11 @@ Route::middleware(['can:isAdmin'])->prefix('admin')->group(function()
     Route::get('/','AdminController@index');
     //Users
     Route::get('/user/all','UserController@allUsers');
+    Route::get('/user/{user}/password','UserController@createPassword');
+    Route::patch('/user/{user}/updatePassword','UserController@updatePassword');
     Route::resource('user','UserController');
+
+
 //    Route::prefix('user')->group(function()
 //    {
 //        Route::get('all','UserController@allUsers');

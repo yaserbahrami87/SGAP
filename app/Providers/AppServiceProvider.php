@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\View;
+use Hekmatinasser\Verta\Verta;
 use Illuminate\Support\ServiceProvider;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +26,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $v = new Verta();
+        $dateNow = $v->format('Y/m/d');
+        View::share('dateNow',$dateNow);
     }
 }

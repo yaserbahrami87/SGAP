@@ -16,6 +16,8 @@
 
   <!-- bootstrap rtl -->
   <link rel="stylesheet" href="{{asset('/admin/dist/css/bootstrap-rtl.min.css')}}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <!-- template rtl version -->
   <link rel="stylesheet" href="{{asset('/admin/dist/css/custom-style.css')}}">
     @yield('headerScript')
@@ -26,6 +28,7 @@
 @include('admin.master.topNav')
 
 @include('admin.master.rightNav')
+@include('sweetalert::alert')
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -52,6 +55,15 @@
       <div class="container-fluid">
         <!-- Info boxes -->
         <div class="row">
+            @if($errors->any())
+                <div class="col-12">
+                    <div class="alert alert-danger">
+                        @foreach($errors->all() as $item )
+                            <li>{{$item}}</li>
+                        @endforeach
+                    </div>
+                </div>
+            @endif
             @yield('content')
         </div>
       </div><!--/. container-fluid -->
@@ -70,10 +82,10 @@
   <footer class="main-footer">
     <!-- To the right -->
     <div class="float-right d-sm-none d-md-block">
-      Anything you want
+
     </div>
     <!-- Default to the left -->
-    <strong>CopyLeft &copy; 2018 <a href="http://github.com/hesammousavi/">حسام موسوی</a>.</strong>
+    <strong>طراحی شده توسط <a href="https://www.linkedin.com/in/yaser-bahrami-b54ab5bb/" target="_blank">یاسر بهرامی</a>.</strong>
   </footer>
 </div>
 <!-- ./wrapper -->

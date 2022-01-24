@@ -1,18 +1,31 @@
-@extends('admin.master.index')
+@extends('master.index')
+@section('headerScript')
+    <style>
+        body,html {
+            background-image: url({{asset('/images/background.jpg')}});
+            height: 100%;
+        }
 
+        #profile-img {
+            height:180px;
+        }
+        .h-80 {
+            height: 80% !important;
+        }
+    </style>
+@endsection
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
-
-                <div class="card-body">
+<div class="container h-80 pt-5">
+    <div class="row align-items-center h-100">
+        <div class="col-5 mx-auto">
+            <div class="text-center">
+                <img id="profile-img" class="rounded-circle profile-img-card" src="{{asset('/images/login.png')}}" />
+                <p id="profile-name" class="profile-name-card"></p>
                     <form method="POST" action="{{ route('register') }}">
                         {{csrf_field()}}
 
                         <div class="form-group row">
-                            <label for="fname" class="col-md-4 col-form-label text-md-right">{{ __('نام:') }}</label>
+                            <label for="fname" class="col-md-4 col-form-label text-md-right text-light">{{ __('نام:') }}</label>
 
                             <div class="col-md-6">
                                 <input id="fname" type="text" class="form-control @error('fname') is-invalid @enderror" name="fname" value="{{ old('fname') }}"  autocomplete="fname" autofocus />
@@ -25,7 +38,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="lname" class="col-md-4 col-form-label text-md-right">{{ __('نام خانوادگی:') }}</label>
+                            <label for="lname" class="col-md-4 col-form-label text-md-right text-light">{{ __('نام خانوادگی:') }}</label>
 
                             <div class="col-md-6">
                                 <input id="lname" type="text" class="form-control @error('lname') is-invalid @enderror" name="lname" value="{{ old('lname') }}" autocomplete="lname" autofocus />
@@ -38,7 +51,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">نام کاربری: <span class="text-danger">*</span> </label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right text-light">نام کاربری: <span class="text-danger">*</span> </label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
@@ -52,7 +65,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">پست الکترونیکی:
+                            <label for="email" class="col-md-4 col-form-label text-md-right text-light">پست الکترونیکی:
                                 <span class="text-danger">*</span>
                             </label>
 
@@ -68,7 +81,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">رمز عبور:<span class="text-danger">*</span> </label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right text-light">رمز عبور:<span class="text-danger">*</span> </label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
@@ -82,7 +95,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">تکرار رمز عبور: <span class="text-danger">*</span> </label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right text-light">تکرار رمز عبور: <span class="text-danger">*</span> </label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
@@ -97,7 +110,6 @@
                             </div>
                         </div>
                     </form>
-                </div>
             </div>
         </div>
     </div>

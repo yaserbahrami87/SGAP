@@ -9,7 +9,7 @@
             <a href="index3.html" class="nav-link">خانه</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="{{ route('logout') }}" class="nav-link">خروج</a>
+            <a href="/logout" class="nav-link">خروج</a>
         </li>
     </ul>
 
